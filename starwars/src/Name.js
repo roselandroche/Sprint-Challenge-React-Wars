@@ -7,8 +7,7 @@ const StyledName = styled.h1`
     color: #443E3E;
     width: 18%;
     text-align: left;
-    margin: 40px auto;
-    
+    margin: 0 auto;
 `;
 
 function Name(props) {
