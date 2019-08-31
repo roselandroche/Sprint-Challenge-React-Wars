@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledBirthYear = styled.p`
-    font-size: 20px;
+    font-size: 16px;
 `;
 
 function BirthYear(props) {
