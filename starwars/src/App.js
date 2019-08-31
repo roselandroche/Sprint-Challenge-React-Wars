@@ -20,16 +20,13 @@ const App = () => {
       .then(result => {
         console.log(result.data.results)
         updateData(result.data.results)
-        // result.data.results.map((person) => {
-        //   updateCharName(charName.push(person.name))
-        // })
       })
 
       .catch(error => {
         console.log(error)
       })
   }, [])
-  // console.log(charName)
+  // console.log(data)
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
