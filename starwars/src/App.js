@@ -11,6 +11,7 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
   const [data, updateData] = useState([])
+  // const [charName, updateCharName] = useState()
 
   useEffect(() => {
     axios
@@ -19,13 +20,16 @@ const App = () => {
       .then(result => {
         console.log(result.data.results)
         updateData(result.data.results)
+        // result.data.results.map((person) => {
+        //   updateCharName(charName.push(person.name))
+        // })
       })
 
       .catch(error => {
         console.log(error)
       })
   }, [])
-  // console.log()
+  // console.log(charName)
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
