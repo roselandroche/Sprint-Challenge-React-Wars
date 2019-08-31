@@ -17,7 +17,7 @@ const App = () => {
       .get('https://swapi.co/api/people')
 
       .then(result => {
-        console.log(result.data.results)
+        console.log(result.data)
         updateData(result.data.results)
       })
 

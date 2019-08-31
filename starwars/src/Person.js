@@ -4,7 +4,7 @@ import BirthYear from './BirthYear';
 import styled from 'styled-components'
 
 const PersonDiv = styled.div`
-    background-color: 
+    margin-top: 20px;
 `;
 
 function Person(props) {
