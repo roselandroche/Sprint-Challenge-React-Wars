@@ -12,16 +12,16 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
   const [data, updateData] = useState([])
-  const [nextAPI, updateNextAPI] = useState()
+  const [API, updateAPI] = useState('https://swapi.co/api/people')
 
   useEffect(() => {
     axios
-      .get('https://swapi.co/api/people')
+      .get(API)
 
       .then(result => {
-        console.log(result.data)
+        // console.log(result)
         updateData(result.data.results)
-        updateNextAPI(result.data.next)
+        updateAPI(result.data.next)
       })
 
       .catch(error => {
@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <Next nextAPI={nextAPI} />
+      <Next API={API} />
       {data.map(person => {
         return <Person name={person.name} birthYear={person.birth_year} />
       })}
