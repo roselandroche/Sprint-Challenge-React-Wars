@@ -6,7 +6,7 @@ const StyledBirthYear = styled.p`
 `;
 
 function BirthYear(props) {
-    return <StyledBirthYear className='birthYear'>{props.birth_year}</StyledBirthYear>
+    return <StyledBirthYear className='birthYear'>{props.birthYear}</StyledBirthYear>
 }
 
 export default BirthYear

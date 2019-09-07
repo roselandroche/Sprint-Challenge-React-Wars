@@ -10,7 +10,7 @@ const PersonDiv = styled.div`
 function Person(props) {
     return <PersonDiv>
         <Name name={props.name} />
-        <BirthYear birthYear={props.birth_year}/>
+        <BirthYear birthYear={props.birthYear}/>
     </PersonDiv>
 }
 
