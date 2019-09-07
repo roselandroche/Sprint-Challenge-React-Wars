@@ -11,7 +11,9 @@ const StyledNext = styled.button`
 `;
 
 function Next(props) {
-    return <StyledNext href={props.API}>Next</StyledNext>
+    return <StyledNext onClick={() => {
+        props.updateNextAPI(props.info.next)
+    }}>Next</StyledNext>
 }
 
 export default Next

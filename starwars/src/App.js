@@ -11,7 +11,8 @@ const App = () => {
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
-  const [data, updateData] = useState([])
+  const [people, updatePeople] = useState([])
+  const [info, updateInfo] = useState([])
   const [nextAPI, updateNextAPI] = useState('https://swapi.co/api/people')
 
   useEffect(() => {
@@ -20,23 +21,24 @@ const App = () => {
 
       .then(result => {
         // console.log(result)
-        updateData(result.data.results)
-        updateNextAPI(result.data.next)
+        updatePeople(result.data.results)
+        updateInfo(result.data)
       })
 
       .catch(error => {
         console.log(error)
       })
-  }, [])
+  }, [nextAPI])
   
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <Next nextAPI={nextAPI} />
-      {data.map(person => {
+      <Next nextAPI={nextAPI} updateNextAPI={updateNextAPI} info={info}/>
+      {people.map(person => {
         return <Person name={person.name} birthYear={person.birth_year} />
       })}
     </div>
+    
   );
 }
 
